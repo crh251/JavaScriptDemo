@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>定时器</title>
+    <script type="text/javascript">
+
+        var id;
+
+        var task = new Array();
+
+        function clock() {
+            var time = new Date();
+            var attime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+
+            document.getElementById("hh1").innerHTML = attime;
+
+            document.getElementById("hh2").innerHTML = id;
+
+            document.getElementById("clock").value = attime;
+        }
+
+
+        function startClock() {
+            id = setInterval(clock,100);
+            task.push(id);
+        }
+
+        function clr() {
+            for(var i = 0; i < task.length; i++) {
+                clearInterval(task[i]);
+            }
+            task.clear;
+        }
+
+
+    </script>
+</head>
+<body>
+
+<h1 id="hh1">
+
+</h1>
+<h2 id="hh2"></h2>
+
+<form>
+    <input type="text" id="clock" size="50"/>
+    <br><br>
+    <input type="button" onclick="startClock()" value="开始"/>
+    &nbsp;&nbsp;
+    <input type="button" onclick="clr()" value="结束" />
+</form>
+</body>
+</html>
