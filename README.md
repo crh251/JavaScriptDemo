@@ -1,4 +1,2 @@
-# JavaScriptDemo
-
 JavaScript demo
 
